@@ -1,36 +1,44 @@
-#Secret Number Guessing Game
+# #Secret Number Guessing Game
 import random
+
 secret_num = random.randint(1,20)
-guessedCorrect = False
-while not guessedCorrect:
-    user_guess = int(input("Gues a number between 1 and 20"))
-    if user_guess == secret_num:
-        print("Your guessed Correctly!")
-        guessedCorrect = True
+while True:
+    user_guess = int(input("Guess a number between 1 and 20: "))
+    if user_guess > secret_num:
+        print("Guess a lower number!")
+    elif user_guess < secret_num:
+        print("Guess a higher number!")
+    elif user_guess == secret_num:
+        print("You guessed correctly!")
+        break
     else:
-        print("Try Again")
+        print("Try Again!")
 
 
-#Secret Number Guessing Game (partners)
-
+#Secret Number Gue1ssing Game (partners)
 import random
 
 player1Name = input("Player 1 Name: ")
 player2Name = input("Player 2 Name: ")
-secret_num = random.randint(1,5)
-guessedCorrect = False
-while not guessedCorrect:
-    player1Guess = int(input("Player 1 Guess a number"))
-    if player1Guess == secret_num:
-        print("{winingPlayer} guessed Correctly!".format(winingPlayer=player1Name))
-        guessedCorrect = True
-    else:
-        player2Guess = int(input("Player 2 Guess a Number"))
-    if player2Guess == secret_num:
-        print("{winingPlayer} guessed Correctly!".format(winingPlayer=player2Name))
-        guessedCorrect = True
-    else:
-        print("Try again")
+
+secret_num = random.randint(1,20)
+while True:
+    player1Guess = int(input("{} Guess a number: ".format(player1Name)))
+    if player1Guess > secret_num:
+        print("Guess a Lower Number")
+    elif player1Guess < secret_num:
+        print("Guess a Higher Number")
+    elif player1Guess == secret_num:
+        print("{} guessed Correctly!".format(player1Name))
+        break
+    player2Guess = int(input("{} Guess a number: ".format(player2Name)))
+    if player2Guess > secret_num:
+        print("Guess a Lower Number")
+    elif player2Guess < secret_num:
+        print("Guess a Higher Number")
+    elif player2Guess == secret_num:
+        print("{} guessed Correctly!".format(player2Name))
+        break
 
     
 #Secret Number Guessing Game (partners/scoring)
@@ -42,19 +50,23 @@ player2Name = input("Player 2 Name: ")
 player1Attempts = 0
 player2Attempts = 0
 
-secret_num = random.randint(1,5)
-guessedCorrect = False
-while not guessedCorrect:
-    player1Guess = int(input("Player 1 Guess a number"))
+secret_num = random.randint(1,20)
+while True:
     player1Attempts += 1
-    if player1Guess == secret_num:
-        print("{winingPlayer} guessed Correctly in {attemptNumber} attempts".format(winingPlayer=player1Name, attemptNumber=player1Attempts))
-        guessedCorrect = True
-    else:
-        player2Guess = int(input("Player 2 Guess a Number"))
-        player2Attempts += 1
-    if player2Guess == secret_num:
-        print("{winingPlayer} guessed Correctly in {attemptNumber} attempts".format(winingPlayer=player2Name, attemptNumber=player2Attempts))
-        guessedCorrect = True
-    else:
-        print("Try again")
+    player1Guess = int(input("{} Guess a number: ".format(player1Name)))
+    if player1Guess > secret_num:
+        print("guess a Lower Number")
+    elif player1Guess < secret_num:
+        print("guess a Higher Number")
+    elif player1Guess == secret_num:
+        print("{} guessed Correctly in {} Attempts!".format(player1Name,player1Attempts))
+        break
+    player2Attempts += 1
+    player2Guess = int(input("{} Guess a number: ".format(player2Name)))
+    if player2Guess > secret_num:
+        print("guess a Lower Number")
+    elif player2Guess < secret_num:
+        print("guess a Higher Number")
+    elif player2Guess == secret_num:
+        print("{} guessed Correctly in {} Attempts!".format(player2Name,player2Attempts))
+        break
