@@ -3,8 +3,13 @@ ageok = age >= 36
 print("You are old enough to be President:", ageok)
 
 yearslived = int(input("How many years have you lived in us?"))
-yearslivedok = yearslived >= 14
-print("You have been a resident for at least 14 years:", yearslivedok)
+
+print("You have been a resident for at least 14 years:", yearslived >= 14)
+
+natborn = input("Are you a Natual born citizen of US? Type 'yes' or 'no': ")
+print("You are a Natual born citizen:", natborn == "yes")
+
+print("You can be president:", ageok and yearslived >= 14 and natborn == "yes")
 
 
 #Part III
