@@ -42,12 +42,12 @@ while "prize" not in inventory:
     if dungeon[floor][room]=="stairs up":
       floor+=1
     else:
-      print("There are no stairs leading up in this room. Please make another choice")
+      print("There are no stairs up in this room. Please make another choice")
   elif choice=="down":
     if dungeon[floor][room]=="stairs down":
       floor-=1
     else:
-      print("There are no stairs leading down in this room. Please make another choice")
+      print("There are no stairs down in this room. Please make another choice")
   elif choice=="grab":
     if dungeon[floor][room]=="magic stones" or dungeon[floor][room]=="sword" or dungeon[floor][room]=="prize":
       print("You grabbed " + dungeon[floor][room] + ".")
