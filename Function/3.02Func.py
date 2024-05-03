@@ -1,9 +1,3 @@
-#number = input("give me a integer")
-#while "." in number:
-#    number = input("That is not a integer")
-#print("yes it is a integer")
-
-
 #name: safe_to_integer
 #purpose: ensures an input as an integer
 #input: varies (type: varies)
