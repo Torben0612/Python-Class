@@ -28,10 +28,16 @@
 def temp_converter(current_temp, choice):
     if choice == 1:
         converted_temp = (current_temp - 32) * (5/9)
-    else:
+    elif choice == 2:
         converted_temp = current_temp * (9 / 5) + 32
-    return temperature
+        print("invalid choice. enter 1 or 2")
+    return tempature
 
+
+#Name: weatherforcast
+#Purpose: prints the weather forcast
+#inputs: tempature(int), temp_type_num(int 1 or 2)
+#retuens: nothing
 def weatherforcast(tempature, temp_type_num):
     if temp_type_num == 1:
         if tempature <= 40:
@@ -51,4 +57,13 @@ def weatherforcast(tempature, temp_type_num):
             print("Perfect, very comfortable")
         elif 27.8 <= tempature:
             print("Too hot, don’t melt!")
-print(temp_converter(80, 2))
+
+weatherforcast(3, 0)
+
+#Main program
+while True:
+    print("""Welcome to the weather forecast! Would you like to convert from 
+          1) Fahrenheit to Celsius or 
+          2) Celsius to Fahrenheit? 
+          """)
+    input("Please make your selection. Type quit if you want to exit.")
