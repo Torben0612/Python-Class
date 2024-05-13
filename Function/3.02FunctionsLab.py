@@ -32,7 +32,23 @@ def temp_converter(current_temp, choice):
         converted_temp = current_temp * (9 / 5) + 32
     return temperature
 
-def weatherforcast(tempature):
+def weatherforcast(tempature, temp_type_num):
     if temp_type_num == 1:
         if tempature <= 40:
+            print("Cold, need winter jacket!")
+        elif 40 < tempature and tempature < 65:
+            print("Cool, sweater weather!")
+        elif 65 <= tempature and tempature < 82:
+            print("Perfect, very comfortable")
+        elif 82 <= tempature:
+            print("Too hot, don’t melt!")
+    elif temp_type_num == 0:
+        if tempature <= 4:
+            print("Cold, need winter jacket!")
+        elif 4 < tempature and tempature < 18.5:
+            print("Cool, sweater weather!")
+        elif 18.5 <= tempature and tempature < 27.8:
+            print("Perfect, very comfortable")
+        elif 27.8 <= tempature:
+            print("Too hot, don’t melt!")
 print(temp_converter(80, 2))
