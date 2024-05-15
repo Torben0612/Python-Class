@@ -48,9 +48,9 @@ def weatherforcast(tempature, temp_type_num):
     rain = randint(0,100)
     if temp_type_num == 1:
         if tempature <= 40:
-            print("Today’s weather will be Cold, need winter jacket! with a", rain "percent chance of rain")
+            print("Today weather will be Cold, need winter jacket! with a", rain "percent chance of rain")
         elif 40 < tempature and tempature < 65:
-            print("Cool, sweater weather!")
+            print("Today weather will be Cool, sweater weather!")
         elif 65 <= tempature and tempature < 82:
             print("Perfect, very comfortable")
         elif 82 <= tempature:
@@ -74,13 +74,21 @@ while doit == True:
     print("""Welcome to the weather forecast! Would you like to convert from 
           1) Fahrenheit to Celsius or 
           2) Celsius to Fahrenheit? 
+          Please make your selection. Type quit if you want to exit.
+          
           """)
-    choice = input("Please make your selection. Type quit if you want to exit.")
-    tempature 
+    choice = input("User Input: ")
     if choice == "quit":
         doit = False
+    elif int(choice) == 1:
+        print("Great! Please enter your temperature in Fahrenheit.")
+        current_temp = input("User Input: ")
+        temp_converter(int(current_temp, 1))
     else:
-        temp_converter()
+        print("Great! Please enter your temperature in Celsius.")
+        current_temp = input("User Input: ")
+        temp_converter(int(current_temp, 2))
+
 
 #check for primes
 #Name: Check for Primes
