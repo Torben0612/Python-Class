@@ -45,25 +45,25 @@ def temp_converter(current_temp, choice):
 #inputs: tempature(int), temp_type_num(int 1 or 2)
 #retuens: nothing
 def weatherforcast(tempature, temp_type_num):
-    rain = randint(0,100)
+    rain = random.randint(0,100)
     if temp_type_num == 1:
         if tempature <= 40:
-            print("Today weather will be Cold, need winter jacket! with a", rain "percent chance of rain")
+            print("Today weather will be Cold, need winter jacket! with a", rain, "percent chance of rain")
         elif 40 < tempature and tempature < 65:
-            print("Today weather will be Cool, sweater weather!")
+            print("Today weather will be Cool, sweater weather! with a", rain, "percent chance of rain")
         elif 65 <= tempature and tempature < 82:
-            print("Perfect, very comfortable")
+            print("Today weather will be Perfect, very comfortable with a", rain, "percent chance of rain")
         elif 82 <= tempature:
-            print("Too hot, don’t melt!")
-    elif temp_type_num == 0:
+            print("Today weather will be Too hot, don't melt! with a", rain, "percent chance of rain")
+    elif temp_type_num == 2:
         if tempature <= 4:
-            print("Cold, need winter jacket!")
+            print("Today weather will be Cold, need winter jacket! with a", rain, "percent chance of rain")
         elif 4 < tempature and tempature < 18.5:
-            print("Cool, sweater weather!")
+            print("Today weather will be Cool, sweater weather! with a", rain, "percent chance of rain")
         elif 18.5 <= tempature and tempature < 27.8:
-            print("Perfect, very comfortable")
+            print("Today weather will be Perfect, very comfortable with a", rain, "percent chance of rain")
         elif 27.8 <= tempature:
-            print("Too hot, don’t melt!")
+            print("It is Today weather will be Too hot, don’t melt! with a", rain, "percent chance of rain")
 
 #weatherforcast(3, 0)
 
@@ -82,13 +82,12 @@ while doit == True:
         doit = False
     elif int(choice) == 1:
         print("Great! Please enter your temperature in Fahrenheit.")
-        current_temp = input("User Input: ")
-        temp_converter(int(current_temp, 1))
+        curent_temp = int(input("User Input: "))
+        weatherforcast(temp_converter(curent_temp, 1), 2)
     else:
         print("Great! Please enter your temperature in Celsius.")
-        current_temp = input("User Input: ")
-        temp_converter(int(current_temp, 2))
-
+        curent_temp = int(input("User Input: "))
+        weatherforcast(temp_converter(curent_temp, 2), 1)
 
 #check for primes
 #Name: Check for Primes
