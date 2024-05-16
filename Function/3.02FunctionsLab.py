@@ -90,4 +90,25 @@ while doit == True:
         weatherforcast(temp_converter(curent_temp, 2), 1)
 
 #check for primes
-#Name: Check for Primes
+#Name: check_prime
+#Purpose check if a int is a prime number
+#inputs num(int)
+#retuens: true 
+
+def safe_to_integer(a):
+    try:
+        int(a)
+        return True
+    except ValueError:
+        print("that is not an integer: ")
+        return False
+    except:
+        print("a unknown error occured")
+        return False
+
+a = input("enter a character: ")
+
+if safe_to_integer(a) == True:
+    print("Character is a Integer")
+else:
+    print("Character is not a Integer")
