@@ -8,22 +8,22 @@ import random
 # Input(s): a, b, and c (floats) <- you may assume user will enter floats
 # Return(s): solutions_list(list) These are decimal values for the solutions to the quadratic rounded to the hundredths place.)
 
-# def quad_solve(a, b, c):
-#     a = float(a)
-#     b = float(b)
-#     c = float(c)
-#     s = b**2 - 4 * a * c
-#     y = (-b + (s) ** 0.5) / (2 * a)
-#     x = (-b - (s) ** 0.5) / (2 * a)
-#     solutions_list = [x, y]
-#     if s < 0:
-#         return "not real"
-#     else:
-#         return solutions_list
+def quad_solve(a, b, c):
+    a = float(a)
+    b = float(b)
+    c = float(c)
+    s = b**2 - 4 * a * c
+    y = (-b + (s) ** 0.5) / (2 * a)
+    x = (-b - (s) ** 0.5) / (2 * a)
+    solutions_list = [x, y]
+    if s < 0:
+        return "not real"
+    else:
+        return solutions_list
 
 
 
-# print(quad_solve(1, -4, 4))
+print(quad_solve(1, -4, 4))
 
 
 #Name: temp_converter
@@ -65,8 +65,6 @@ def weatherforcast(tempature, temp_type_num):
         elif 27.8 <= tempature:
             print("It is Today weather will be Too hot, don’t melt! with a", rain, "percent chance of rain")
 
-#weatherforcast(3, 0)
-
 #Main program
 doit = True
 
@@ -94,6 +92,11 @@ while doit == True:
 #Purpose check if a int is a prime number
 #inputs num(int)
 #retuens: true 
+
+#i will finish this later i have been really busy with
+#a research paper, a bio project, english reading
+#i will work on this with my dad tonight.
+
 
 def safe_to_integer(a):
     try:
