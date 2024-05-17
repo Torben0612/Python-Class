@@ -91,11 +91,7 @@ while doit == True:
 #Name: check_prime
 #Purpose check if a int is a prime number
 #inputs num(int)
-#retuens: true 
-
-#i will finish this later i have been really busy with
-#a research paper, a bio project, english reading
-#i will work on this with my dad tonight.
+#retuens: boolean
 
 
 def safe_to_integer(a):
