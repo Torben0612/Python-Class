@@ -1,6 +1,4 @@
 import random
-#1 Quadratic Equation Solver
-
 # Name: quad_solve
 # Purpose: Finds solutions to the equation ax^2 + bx + c = 0 and
 #   returns the result. Uses the quadratic formula:
@@ -25,9 +23,8 @@ def quad_solve(a, b, c):
 
 
 
-print(quad_solve(1, -4, 4))
+# print(quad_solve(1, -4, 4))
 
-#2 - Celsius/Fahrenheit Conversion
 
 #Name: temp_converter
 #Purpose convert F and C
@@ -69,29 +66,28 @@ def weatherforcast(tempature, temp_type_num):
             print("It is Today weather will be Too hot, don’t melt! with a", rain, "percent chance of rain")
 
 #Main program
-doit = True
+# doit = True
 
-while doit == True:
-    print("""Welcome to the weather forecast! Would you like to convert from 
-          1) Fahrenheit to Celsius or 
-          2) Celsius to Fahrenheit? 
-          Please make your selection. Type quit if you want to exit.
+# while doit == True:
+#     print("""Welcome to the weather forecast! Would you like to convert from 
+#           1) Fahrenheit to Celsius or 
+#           2) Celsius to Fahrenheit? 
+#           Please make your selection. Type quit if you want to exit.
           
-          """)
-    choice = input("User Input: ")
-    if choice == "quit":
-        doit = False
-    elif int(choice) == 1:
-        print("Great! Please enter your temperature in Fahrenheit.")
-        curent_temp = int(input("User Input: "))
-        weatherforcast(temp_converter(curent_temp, 1), 2)
-    else:
-        print("Great! Please enter your temperature in Celsius.")
-        curent_temp = int(input("User Input: "))
-        weatherforcast(temp_converter(curent_temp, 2), 1)
+#           """)
+#     choice = input("User Input: ")
+#     if choice == "quit":
+#         doit = False
+#     elif int(choice) == 1:
+#         print("Great! Please enter your temperature in Fahrenheit.")
+#         curent_temp = int(input("User Input: "))
+#         weatherforcast(temp_converter(curent_temp, 1), 2)
+#     else:
+#         print("Great! Please enter your temperature in Celsius.")
+#         curent_temp = int(input("User Input: "))
+#         weatherforcast(temp_converter(curent_temp, 2), 1)
 
-#3 - Check for Primes
-
+#check for primes
 #Name: check_prime
 #Purpose check if a int is a prime number
 #inputs num(int)
@@ -123,10 +119,7 @@ def create_prime_factors(num):
             d = d + 1
     return f
 
-#name: safe_to_integer
-#purpose: ensures an input as an integer
-#input: varies (type: varies)
-#output: ture or false
+
 def safe_to_integer(a):
     try:
         int(a)
