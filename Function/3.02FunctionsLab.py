@@ -104,6 +104,23 @@ def check_prime(n):
     return True
 
 
+#Name: create_prime_factors
+#purpose: takesn in a number and returns a list of prime factors
+#Inputs: int
+#Returns: list of prime factors
+def create_prime_factors(num):
+    f = []
+    d = 2
+
+    while d <= num:
+        if num % divisor == 0:
+            f.append(d)
+            num = num / divisor
+        else:
+            divisor += 1
+
+    return f
+
 
 def safe_to_integer(a):
     try:
@@ -116,20 +133,25 @@ def safe_to_integer(a):
         print("a unknown error occured")
         return False
 
-print('check_prime(2) should be False it is {}'.format(check_prime(2)))
-print('check_prime(3) should be True it is {}'.format(check_prime(3)))
-print('check_prime(4) should be False it is {}'.format(check_prime(4)))
-print('check_prime(66) should be False it is {}'.format(check_prime(66)))
-print('check_prime(1) should be False it is {}'.format(check_prime(1)))
-print('check_prime(41) should be True it is {}'.format(check_prime(41)))
-print('check_prime(7) should be True it is {}'.format(check_prime(7)))
+# print('check_prime(2) should be False it is {}'.format(check_prime(2)))
+# print('check_prime(3) should be True it is {}'.format(check_prime(3)))
+# print('check_prime(4) should be False it is {}'.format(check_prime(4)))
+# print('check_prime(66) should be False it is {}'.format(check_prime(66)))
+# print('check_prime(1) should be False it is {}'.format(check_prime(1)))
+# print('check_prime(41) should be True it is {}'.format(check_prime(41)))
+# print('check_prime(7) should be True it is {}'.format(check_prime(7)))
 
 a = input("enter a character: ")
 
 if safe_to_integer(a) == True:
-    if check_prime(int(a)) == True:
-        print("That is a prime number")
+    print("""enter 1 if you only want to check if its a prime.
+          enter 2 if you want the full prime factorization""")
+    if int(input("User Input: ")) == 1:
+        if check_prime(int(a)) == True:
+            print("That is a prime number")
+        else:
+            print("That is not a prime")
     else:
-        print("That is not a prime")
+        print(create_prime_factors(int(a)))
 else:
     print("please enter a integer")
