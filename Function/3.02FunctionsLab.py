@@ -23,7 +23,7 @@ def quad_solve(a, b, c):
 
 
 
-print(quad_solve(1, -4, 4))
+# print(quad_solve(1, -4, 4))
 
 
 #Name: temp_converter
@@ -66,32 +66,43 @@ def weatherforcast(tempature, temp_type_num):
             print("It is Today weather will be Too hot, don’t melt! with a", rain, "percent chance of rain")
 
 #Main program
-doit = True
+# doit = True
 
-while doit == True:
-    print("""Welcome to the weather forecast! Would you like to convert from 
-          1) Fahrenheit to Celsius or 
-          2) Celsius to Fahrenheit? 
-          Please make your selection. Type quit if you want to exit.
+# while doit == True:
+#     print("""Welcome to the weather forecast! Would you like to convert from 
+#           1) Fahrenheit to Celsius or 
+#           2) Celsius to Fahrenheit? 
+#           Please make your selection. Type quit if you want to exit.
           
-          """)
-    choice = input("User Input: ")
-    if choice == "quit":
-        doit = False
-    elif int(choice) == 1:
-        print("Great! Please enter your temperature in Fahrenheit.")
-        curent_temp = int(input("User Input: "))
-        weatherforcast(temp_converter(curent_temp, 1), 2)
-    else:
-        print("Great! Please enter your temperature in Celsius.")
-        curent_temp = int(input("User Input: "))
-        weatherforcast(temp_converter(curent_temp, 2), 1)
+#           """)
+#     choice = input("User Input: ")
+#     if choice == "quit":
+#         doit = False
+#     elif int(choice) == 1:
+#         print("Great! Please enter your temperature in Fahrenheit.")
+#         curent_temp = int(input("User Input: "))
+#         weatherforcast(temp_converter(curent_temp, 1), 2)
+#     else:
+#         print("Great! Please enter your temperature in Celsius.")
+#         curent_temp = int(input("User Input: "))
+#         weatherforcast(temp_converter(curent_temp, 2), 1)
 
 #check for primes
 #Name: check_prime
 #Purpose check if a int is a prime number
 #inputs num(int)
 #retuens: boolean
+
+def check_prime(n):
+    if n <= 2:
+        return False
+    i = n - 1
+    while i > 1:
+        if n % i == 0:
+            return False
+        i = i - 1
+    return True
+
 
 
 def safe_to_integer(a):
@@ -105,9 +116,20 @@ def safe_to_integer(a):
         print("a unknown error occured")
         return False
 
+print('check_prime(2) should be False it is {}'.format(check_prime(2)))
+print('check_prime(3) should be True it is {}'.format(check_prime(3)))
+print('check_prime(4) should be False it is {}'.format(check_prime(4)))
+print('check_prime(66) should be False it is {}'.format(check_prime(66)))
+print('check_prime(1) should be False it is {}'.format(check_prime(1)))
+print('check_prime(41) should be True it is {}'.format(check_prime(41)))
+print('check_prime(7) should be True it is {}'.format(check_prime(7)))
+
 a = input("enter a character: ")
 
 if safe_to_integer(a) == True:
-    print("Character is a Integer")
+    if check_prime(int(a)) == True:
+        print("That is a prime number")
+    else:
+        print("That is not a prime")
 else:
-    print("Character is not a Integer")
+    print("please enter a integer")
