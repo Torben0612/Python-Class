@@ -36,16 +36,6 @@ def status():
     health = {} | food = {} | distance remaining {} | date = {}/{}
     """.format(health, food, distance_remain, month, day))
 
-def help():
-    print("""
-        travel: moves you randomly between 30-60 miles and takes 3-7 days (random).
-        rest: increases health 1 level (up to 5 maximum) and takes 2-5 days (random).
-        hunt: adds 100 lbs of food and takes 2-5 days (random).
-        status: lists food, health, distance traveled, and day.
-        help: lists all the commands.
-        quit: will end the game.""")
-
-
 def hunt():
 
 
@@ -61,13 +51,37 @@ def check_end():
     if month == 12 and day == DAYS_IN_MONTH[12] and distance_remain == 0 and health >= 1:
         print("You Win")
 
+def help():
+    print("""
+        travel: moves you randomly between 30-60 miles and takes 3-7 days (random).
+        rest: increases health 1 level (up to 5 maximum) and takes 2-5 days (random).
+        hunt: adds 100 lbs of food and takes 2-5 days (random).
+        status: lists food, health, distance traveled, and day.
+        help: lists all the commands.
+        quit: will end the game.""")
+
 #main program
 print("""The goal is to travel from St. Louis, Missouri to Oregon City Oregon
       (2000 miles) by Dec 31st. However,the trail is arduous. Each day costs
       you food and health. You can hunt and rest, but you have to get there before winter!""")
 
 player_name = input("What is your name")
+gameruning = True
 
-while True:
+while gameruning == True:
     status()
     choice = input("What do you want to do")
+    if choice == "travel":
+        travel()
+    elif choice == "rest":
+        rest()
+    elif choice == "hunt":
+        hunt()
+    elif choice == "status":
+        status()
+    elif choice == "help":
+        help()
+    elif choice == "quit":
+        gameruning = False
+    else:
+        print("invalid command")
