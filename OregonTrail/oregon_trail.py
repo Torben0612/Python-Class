@@ -33,10 +33,7 @@ def deduct_health():
 def status():
     print("""
     Your status:
-    health = {}
-    food = {}
-    distance remaining {}
-    date = {}/{}
+    health = {} | food = {} | distance remaining {} | date = {}/{}
     """.format(health, food, distance_remain, month, day))
 
 def help():
@@ -73,3 +70,4 @@ player_name = input("What is your name")
 
 while True:
     status()
+    choice = input("What do you want to do")
