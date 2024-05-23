@@ -39,6 +39,10 @@ def helth_loss_days():
 def deduct_health():
     health -= 1
 
+def add_health():
+    health += 1
+
+
 def deduct_food():
     food -= 5
 
@@ -49,10 +53,14 @@ def status():
     """.format(health, food, distance_remain, month, day))
 
 def hunt():
-
+    food += 100
+    advance_days(random.randint(2,5))
 
 def rest():
-
+    advance_days(random.randint(2,5))
+    if health < 5:
+        add_health()
+    else: "your already at max health of 5"
 
 def travel():
     advance_days(random.randint(3,7))
