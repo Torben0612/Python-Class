@@ -7,28 +7,40 @@ distance_remain = 2000
 month = 1
 day = 0
 DAYS_IN_MONTH = [0,31,28,31,30,31,30,31,31,30,31,30,31] 
+loss_days = []
 
 def next_day():
-    food -= 5
+    deduct_food()
     if day == loss_days[0] or day == loss_days[1]:
         deduct_health()
-
-def advance_days(days):
-    while days != 0:
-        next_day()
-        days - 1
-
-def is_last_day():
-    if day == DAYS_IN_MONTH[month]:
-        helth_loss_days()
+    if is_last_day() == True:
         month += 1
+        day = 0
+        helth_loss_days()
+    
+def advance_days(add_days):
+    while add_days != 0:
+        next_day()
+        add_days - 1
+
+#Name:
+#Purpose
+#Inputs
+#returns
+def is_last_day():
+    if DAYS_IN_MONTH[month] == day:
+        return True
+    else:
+        return False
 
 def helth_loss_days():
     loss_days = [random.randint(0,DAYS_IN_MONTH[month]), random.randint(0,DAYS_IN_MONTH[month])]
-    return loss_days
 
 def deduct_health():
     health -= 1
+
+def deduct_food():
+    food -= 5
 
 def status():
     print("""
