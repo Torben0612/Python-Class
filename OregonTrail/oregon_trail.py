@@ -1,33 +1,34 @@
 import random
 
 #global variables
-health = 5
+health = 2
 food = 500
 distance_remain = 2000
 month = 1
 day = 1
 DAYS_IN_MONTH = [0,31,28,31,30,31,30,31,31,30,31,30,31] 
-loss_days = [random.randint(1,DAYS_IN_MONTH[month]), random.randint(2,DAYS_IN_MONTH[month])]
-
+loss_days = []
+#random.randint(1,DAYS_IN_MONTH[month]), random.randint(2,DAYS_IN_MONTH[month])
 def next_day():
     global day, loss_days, month
     deduct_food()
     if day == loss_days[0] or day == loss_days[1]:
         deduct_health()
+        check_end()
     if is_last_day() == True:
+        check_end()
         month += 1
         day = 1
         helth_loss_days()
     day += 1
-    check_end()
     
 def advance_days(add_days):
     while add_days > 0:
         next_day()
         add_days -= 1
 
-#Name:
-#Purpose
+#Name: is_last_day
+#Purpose checks if its last day in month
 #Inputs
 #returns
 def is_last_day():
@@ -108,7 +109,7 @@ print("""The goal is to travel from St. Louis, Missouri to Oregon City Oregon
 
 player_name = input("What is your name")
 gameruning = True
-
+helth_loss_days()
 while gameruning == True:
     status()
     choice = input("What do you want to do")
