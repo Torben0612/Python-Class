@@ -37,10 +37,11 @@ print(quad_solve(1, -4, 4))
 def temp_converter(current_temp, choice):
      if choice == 1:
          tempature = (current_temp - 32) * (5/9)
+         return int(tempature)
      elif choice == 2:
          tempature = current_temp * (9 / 5) + 32
          print("invalid choice. enter 1 or 2")
-         return tempature
+         return int(tempature)
 
 
 #Name: weatherforcast
@@ -51,22 +52,22 @@ def weatherforcast(tempature, temp_type_num):
     rain = random.randint(0,100)
     if temp_type_num == 1:
         if tempature <= 40:
-            print("Today weather will be Cold, need winter jacket! with a", rain, "percent chance of rain")
+            print("It is {} degrees Fahrenheit. Today weather will be Cold, need winter jacket! with a {} percent chance of rain".format(tempature, rain))
         elif 40 < tempature and tempature < 65:
-            print("Today weather will be Cool, sweater weather! with a", rain, "percent chance of rain")
+            print("It is {} degrees Fahrenheit. Today weather will be Cool, sweater weather! with a {} percent chance of rain".format(tempature, rain))
         elif 65 <= tempature and tempature < 82:
-            print("Today weather will be Perfect, very comfortable with a", rain, "percent chance of rain")
+            print("It is {} degrees Fahrenheit. Today weather will be Perfect, very comfortable with a {} percent chance of rain".format(tempature, rain))
         elif 82 <= tempature:
-            print("Today weather will be Too hot, don't melt! with a", rain, "percent chance of rain")
+            print("It is {} degrees Fahrenheit. Today weather will be Too hot, don't melt! with a {} percent chance of rain".format(tempature, rain))
     elif temp_type_num == 2:
         if tempature <= 4:
-            print("Today weather will be Cold, need winter jacket! with a", rain, "percent chance of rain")
+            print("It is {} degrees Celsius. Today weather will be Cold, need winter jacket! with a {} percent chance of rain".format(tempature, rain))
         elif 4 < tempature and tempature < 18.5:
-            print("Today weather will be Cool, sweater weather! with a", rain, "percent chance of rain")
+            print("It is {} degrees Celsius. Today weather will be Cool, sweater weather with a {} percent chance of rain".format(tempature, rain))
         elif 18.5 <= tempature and tempature < 27.8:
-            print("Today weather will be Perfect, very comfortable with a", rain, "percent chance of rain")
+            print("It is {} degrees Celsius. Today weather will be Perfect, very comfortable with a {} percent chance of rain".format(tempature, rain))
         elif 27.8 <= tempature:
-            print("It is Today weather will be Too hot, don’t melt! with a", rain, "percent chance of rain")
+            print("It is {} degrees Celsius. Today weather will be Too hot, don’t melt! with a {} percent chance of rain".format(tempature, rain))
 
 #Main program
 doit = True
