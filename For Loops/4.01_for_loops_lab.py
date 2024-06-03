@@ -10,4 +10,4 @@ list = ['a', 'b', 'c', 'd']
 #     print(letter)
 
 for letter in "python class":
-    print(letter)
+    print("hi")
