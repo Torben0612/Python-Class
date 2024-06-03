@@ -1,4 +1,4 @@
-list = ['a', 'b', 'c', 'd']
+# list = ['a', 'b', 'c', 'd']
 
 # index = 0
 
@@ -9,5 +9,11 @@ list = ['a', 'b', 'c', 'd']
 # for letter in list:
 #     print(letter)
 
-for letter in "python class":
-    print("hi")
+# for letter in "python class":
+#     print("hi")
+
+names = []
+#name:
+
+def name_list():
+    input("Please enter a name or 'done' if finished: ")
