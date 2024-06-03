@@ -13,7 +13,16 @@
 #     print("hi")
 
 names = []
+#FUNCTIONS
+
 #name:
 
-def name_list():
-    input("Please enter a name or 'done' if finished: ")
+def get_numbers():
+    while running == True:
+        num_list = []
+        num = input("Please enter a integer or 'done' if finished: ")
+        num_list.append(num)
+        print(num_list)
+    return num_list
+
+get_numbers()
